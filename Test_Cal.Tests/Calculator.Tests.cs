@@ -105,16 +105,7 @@ namespace Test_Cal.Tests
 
             Assert.InRange(actual, -18, 18);
         }
-        
-        //PowerOf()
-        [Fact]
-        public void ReturnNumb1PowerOfNumb2()
-        {
-            double expected = 5 * 5 * 5;
-            double actual = Calculator.PowerOf(5, 3);
-            Assert.Equal(expected, actual);
-        }
-
+   
         //ArrayCreation()
         [Fact]
         public void GetLengthOfArrayCreation()

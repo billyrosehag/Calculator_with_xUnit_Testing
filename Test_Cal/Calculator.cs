@@ -78,12 +78,6 @@ namespace Test_Cal
             Result = numb1 * numb2;
             return Result;
         }
-        //PowerOf
-        public static double PowerOf(double numb1, double numb2)
-        {
-            Result = Math.Pow(numb1, numb2);
-            return Result;
-        }
 
         //Creates an array where parameter sets its length and the random range for each index value. 
         public static double[] ArrayCreation(int arrayLength, int randomEnd) 
