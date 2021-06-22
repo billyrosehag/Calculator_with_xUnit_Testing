@@ -20,7 +20,9 @@ namespace Test_Cal
                 bool correctInput = true;
                 string[] arrSeperation = new string[] { };
 
-                Console.Write("What do you want to calculate: ");
+                
+
+                Console.Write("\nWhat do you want to calculate: ");
                 do
                 {
                     arrSeperation = myFormating.StringSeperator(Console.ReadLine());
@@ -41,7 +43,27 @@ namespace Test_Cal
 
                 Console.WriteLine($"\nCalculation Reslut: {result}");
 
-                Console.ReadLine();
+                Console.Write("Do you want to do another Calculation(Y/N): ");
+                char answer = Console.ReadKey().KeyChar;
+
+                if(answer == 'y' || answer == 'Y')
+                {
+                    Console.WriteLine();
+                    isAlive = true;
+                }
+                else if(answer == 'n' || answer == 'N')
+                {
+                    Console.WriteLine("\nProgram will exit. Press any key to continue");
+                    Console.ReadKey();
+                    isAlive = false;
+                }
+                else
+                {
+                    Console.WriteLine("\nInvalid answer. Program will exit. Press any key to continue");
+                    Console.ReadKey();
+                    isAlive = false;
+                }
+
 
             } while (isAlive);
 
