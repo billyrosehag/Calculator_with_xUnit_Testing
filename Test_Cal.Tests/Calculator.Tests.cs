@@ -22,13 +22,22 @@ namespace Test_Cal.Tests
         }
 
         [Fact]
-        public void AddTogetherTwoRandomNumbersFromDoubleArray()
+        public void AddTogetherNumbersFromDoubleArray()
         {
+            double expected = 5 + 2 + 20 + 6 + 19;
+
             double[] testArray = new double[] {5,2,20,6,19};
 
             double actual = Calculator.Addition(testArray);
 
-            Assert.InRange(actual, 7, 39);
+            double expected2 = 70 + -25;
+
+            double[] testArray2 = new double[] { 70,-25 };
+
+            double actual2 = Calculator.Addition(testArray2);
+
+            Assert.Equal(expected,actual);
+            Assert.Equal(expected2, actual2);
         }
        
 
@@ -97,13 +106,22 @@ namespace Test_Cal.Tests
 
         }
         [Fact]
-        public void SubtractRandomNumberFromDoubleArray()
+        public void SubtractumberFromDoubleArray()
         {
-            double[] testArray = new double[] { 5, 2, 20, 6, 19 };
+            double expected = 50 - 5 - 20 - 6 - 19;
+
+            double[] testArray = new double[] { 50, 5, 20, 6, 19 };
 
             double actual = Calculator.Subtraction(testArray);
 
-            Assert.InRange(actual, -18, 18);
+            double expected2 = 44 - 13;
+
+            double[] testArray2 = new double[] { 44, 13 };
+
+            double actual2 = Calculator.Subtraction(testArray2);
+
+            Assert.Equal(expected, actual);
+            Assert.Equal(expected2, actual2);
         }
    
         //ArrayCreation()

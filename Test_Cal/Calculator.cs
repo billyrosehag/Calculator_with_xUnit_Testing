@@ -31,10 +31,11 @@ namespace Test_Cal
         //Uses random values picked from an array for the calculation
         public static double Addition(double[]numbers)
         {
-            double numb1 = numbers[rng.Next(0, numbers.Length)];
-            double numb2 = numbers[rng.Next(0, numbers.Length)];
-
-            Result = numb1 + numb2;
+            result = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                result += numbers[i];
+            }
             return Result;
         }
         
@@ -47,10 +48,12 @@ namespace Test_Cal
         //Uses random values picked from an array for the calculation
         public static double Subtraction(double[] numbers)
         {
-            double numb1 = numbers[rng.Next(0, numbers.Length)];
-            double numb2 = numbers[rng.Next(0, numbers.Length)];
+            result = numbers[0];
 
-            Result = numb1 - numb2;
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                result -= numbers[i];
+            }
             return Result;
         }
         //Division
