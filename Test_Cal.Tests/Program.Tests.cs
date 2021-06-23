@@ -45,5 +45,19 @@ namespace Test_Cal.Tests
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void EndProgramActAccordingly()
+        {
+      
+            bool actual1 = Program.Endprogram('y');
+            bool actual2 = Program.Endprogram('n');
+            bool actual3 = Program.Endprogram('r');
+
+            Assert.True(actual1);
+            Assert.False(actual2);
+            Assert.False(actual3);
+
+        }
     }
 }

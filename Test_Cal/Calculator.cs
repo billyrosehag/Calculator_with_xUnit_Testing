@@ -28,7 +28,7 @@ namespace Test_Cal
             return Result;
         }
         
-        //Uses random values picked from an array for the calculation
+        //Uses array for the calculation
         public static double Addition(double[]numbers)
         {
             result = 0;
@@ -45,7 +45,7 @@ namespace Test_Cal
             Result = numb1 - numb2;
             return Result;
         }
-        //Uses random values picked from an array for the calculation
+        //Uses array for the calculation
         public static double Subtraction(double[] numbers)
         {
             result = numbers[0];
@@ -93,8 +93,5 @@ namespace Test_Cal
             }
             return arrRandom;
         }
-       
-       
-
     }
 }
