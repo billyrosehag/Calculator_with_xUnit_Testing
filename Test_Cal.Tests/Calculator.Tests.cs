@@ -9,7 +9,7 @@ namespace Test_Cal.Tests
         //Addition()
         [Theory]
         [InlineData(1, 3, 4)]
-        [InlineData(-4, -4, -8)]
+        [InlineData((-4), (-4), -8)]
         [InlineData(5, 5,10)]
         [InlineData(50,5,55)]
         [InlineData(3,3, 6)]
@@ -24,22 +24,39 @@ namespace Test_Cal.Tests
         [Fact]
         public void AddTogetherNumbersFromDoubleArray()
         {
+            double[] testArray = new double[] { 5, 2, 20, 6, 19 };
+            double[] testArray2 = new double[] { 70, -25 };
+
             double expected = 5 + 2 + 20 + 6 + 19;
-
-            double[] testArray = new double[] {5,2,20,6,19};
-
-            double actual = Calculator.Addition(testArray);
-
             double expected2 = 70 + -25;
-
-            double[] testArray2 = new double[] { 70,-25 };
-
+  
+            double actual = Calculator.Addition(testArray);
             double actual2 = Calculator.Addition(testArray2);
 
             Assert.Equal(expected,actual);
             Assert.Equal(expected2, actual2);
         }
        
+        [Fact]
+        public void ReturnZeroWhenArrayIsEmpty()
+        {
+            double[] testArray = new double[0];
+
+            double expected = 0;
+
+            Assert.Equal(expected, Calculator.Addition(testArray));
+            Assert.Equal(expected, Calculator.Subtraction(testArray));
+        }
+        [Fact]
+        public void ReturnZeroWhenArrayIsNull()
+        {
+            double[] testArray = new double[] {double.NaN};
+
+            double expected = 0;
+
+            Assert.Equal(expected, Calculator.Addition(testArray));
+            Assert.Equal(expected, Calculator.Subtraction(testArray));
+        }
 
         //Division()
         [Theory]
@@ -72,6 +89,7 @@ namespace Test_Cal.Tests
             Assert.False(Double.IsInfinity(Calculator.Division(numb1,numb2)));
         }
 
+
         //Multiplication
         [Theory]
         [InlineData(2, 2, 4)]
@@ -91,7 +109,7 @@ namespace Test_Cal.Tests
         //Subtraction()
         [Theory]
         [InlineData(1, 1, 0)]
-        [InlineData(5, 3, 2)]
+        [InlineData((-5), 3, -8)]
         [InlineData(25, 8, 17)]
         [InlineData(8, 5, 3)]
         [InlineData(6000, 500, 5500)]
@@ -105,19 +123,17 @@ namespace Test_Cal.Tests
 
 
         }
+        
         [Fact]
-        public void SubtractumberFromDoubleArray()
+        public void SubtractNumberFromDoubleArray()
         {
-            double expected = 50 - 5 - 20 - 6 - 19;
-
             double[] testArray = new double[] { 50, 5, 20, 6, 19 };
-
-            double actual = Calculator.Subtraction(testArray);
-
+            double[] testArray2 = new double[] { 44, 13 };
+            
+            double expected = 50 - 5 - 20 - 6 - 19;
             double expected2 = 44 - 13;
 
-            double[] testArray2 = new double[] { 44, 13 };
-
+            double actual = Calculator.Subtraction(testArray);
             double actual2 = Calculator.Subtraction(testArray2);
 
             Assert.Equal(expected, actual);

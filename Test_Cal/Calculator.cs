@@ -32,9 +32,46 @@ namespace Test_Cal
         public static double Addition(double[]numbers)
         {
             result = 0;
-            for (int i = 0; i < numbers.Length; i++)
-            {
+            try {
+
+
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    if (!double.IsNaN(numbers[i]))
+                    {
                 result += numbers[i];
+                    }
+                    else
+                    {
+                        
+                    }
+            }
+             
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("Input must be atleast one number.");
+                result = 0;
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("Input can not be null.");
+                result = 0;
+            }
+            catch (NotFiniteNumberException)
+            {
+                Console.WriteLine("Input must be a number.");
+                result = 0;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Input must be a number.");
+                result = 0;
+            }
+            catch (ArithmeticException)
+            {
+                Console.WriteLine("Input must be a number.");
+                result = 0;
             }
             return Result;
         }
@@ -48,11 +85,47 @@ namespace Test_Cal
         //Uses array for the calculation
         public static double Subtraction(double[] numbers)
         {
-            result = numbers[0];
-
-            for (int i = 1; i < numbers.Length; i++)
+            try
             {
-                result -= numbers[i];
+                if (double.IsNaN(numbers[0]))
+                {
+                    numbers[0] = 0;
+                }
+                
+                result = numbers[0];
+
+                if(numbers.Length > 1) { 
+              
+                    for (int i = 1; i < numbers.Length; i++)
+                {
+                        if (double.IsNaN(numbers[i]))
+                        {
+                            numbers[i] = 0;
+                        }
+                        result -= numbers[i];
+                }
+               
+                }
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("Input must be atleast one number.");
+                result = 0;
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("Input can not be null.");
+                result = 0;
+            }
+            catch (NotFiniteNumberException)
+            {
+                Console.WriteLine("Input must be a number.");
+                result = 0;
+            }
+            catch(FormatException)
+            {
+                Console.WriteLine("Input must be a number.");
+                result = 0;
             }
             return Result;
         }
@@ -71,7 +144,8 @@ namespace Test_Cal
             catch (DivideByZeroException)
             {
                 Result = 0;
-                Console.WriteLine("\nDivided by zero is not allowed. Result will be set to zero.");  
+                Console.WriteLine("\nDivided by zero is not allowed. Result will be set to zero.");
+               
             }       
             return Result;              
         }

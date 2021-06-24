@@ -45,7 +45,6 @@ namespace Test_Cal.Tests
 
             Assert.Equal(expected, actual);
         }
-
         [Fact]
         public void EndProgramActAccordingly()
         {
